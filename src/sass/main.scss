@@ -1,4 +1,3 @@
-// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "../../node_modules/bootstrap/scss/functions";
 
 // 2. Include any default variable overrides here
@@ -23,7 +22,37 @@
 @import "../../node_modules/bootstrap/scss/grid";
 @import "../../node_modules/bootstrap/scss/helpers";
 
+$legogreen: #00AF4D;
+$legoblack: #000;
+$legoyellow:#FFD700;
+$legored:#DA291C;
+$legoblue:#006DB7;
 
 body{
-    background-color: blue;
+    background-color: $legoyellow;
+    background-image: url(../images/mainbackground.png);
 }
+
+@mixin default-box($box-color, $max-w, $bk-color, $box-rem){
+    color: $box-color;
+    max-width: $max-w;
+    width: 100%;
+    background-color: $bk-color;
+    padding: $box-rem;
+}
+
+.content-container{
+    @include default-box($legoblack, 1200px, #fff, 1rem);
+    margin: 0 auto;
+    
+    .content{
+        .product-card {
+            @include default-box(#fff, 300px, $legoblack, 1rem);
+            
+            .shopping-btn{
+                background-color: $legogreen;
+            }
+        }
+    }
+}
+

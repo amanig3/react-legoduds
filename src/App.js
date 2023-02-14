@@ -1,11 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import ContentPage from './components/ContentPage';
+import Header from './components/Header';
+import Nav from './components/Nav';
 import './css/main.css'
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>Det funker</h1>
+    <div className="container">
+        <Header/>
+        <Nav />
+        <ContentPage/>
     </div>
   );
 }
